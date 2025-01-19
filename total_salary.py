@@ -1,6 +1,6 @@
 def total_salary(path):
     try:
-        with open(path, encoding='utf-8') as file:
+        with open(path, 'r', encoding='utf-8') as file:
             total_salary = 0
             count = 0
             for line in file:
@@ -15,7 +15,7 @@ def total_salary(path):
             if count == 0:
                 return 0, 0
 
-            average_salary = round (total_salary / count,2)
+            average_salary = round(total_salary / count, 2)
             return total_salary, average_salary
     except FileNotFoundError:
         print(f"Файл {path} не знайдено.")
@@ -23,7 +23,3 @@ def total_salary(path):
     except Exception as e:
         print(f"Виникла помилка: {e}")
         return 0, 0
-
-# Приклад використання функції
-total, average = total_salary("path/to/salary_file.txt")
-print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
