@@ -1,6 +1,6 @@
 def total_salary(path):
     try:
-        with open(path, 'r', encoding='utf-8') as file:
+        with open(path, encoding='utf-8') as file:
             total_salary = 0
             count = 0
             for line in file:
