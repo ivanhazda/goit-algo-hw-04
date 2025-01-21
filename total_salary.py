@@ -7,7 +7,7 @@ def total_salary(path):
             for line in file:
                 try:
                     name, salary = line.strip().split(',')
-                    total_salary += int(salary)
+                    total_salary += float(salary)
                     count += 1
                 except ValueError:
                     print(f"Помилка при обробці рядка: {line.strip()}")
@@ -16,7 +16,7 @@ def total_salary(path):
             if count == 0:
                 return 0, 0
 
-            average_salary = round(total_salary / count, 2)
+            average_salary = total_salary / count
             return total_salary, average_salary
     except FileNotFoundError:
         print(f"Файл {path} не знайдено.")
